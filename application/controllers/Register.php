@@ -24,6 +24,9 @@ public function __construct()
             //if want to hide menu, send menuHide = true
             $data['menuHide'] = 'false';
 
+						$data['sexo'] = '';
+						$data['estadoCivil'] = '';
+
             $this->load->template('Register_view', $data);
 	}
 }

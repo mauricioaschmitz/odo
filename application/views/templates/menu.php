@@ -35,5 +35,6 @@ if (isset($menuHide) && $menuHide == "true") {
   <?php  } ?>
 </div>
 </nav>
+<div style="padding-top: 40px;"></div>
 <?php
 }
