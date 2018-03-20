@@ -3,34 +3,34 @@
         <form name="registros" method="post" enctype="multipart/form-data">
             <div class="well well-sm">
                 <p><strong>Atenção! </strong>Preencha o Formulário abaixo para realizar o cadastro.
-                A identificação do usuário é realizada através do número do CPF, atenção ao inserir. <p><strong>Os campos marcados com * são obrigatórios.</strong></p>
+                    A identificação do usuário é realizada através do número do CPF, atenção ao inserir. <p><strong>Os campos marcados com * são obrigatórios.</strong></p>
             </div>
             <div class ="row">
                 <div class="col-3 form-group">
                     <label style="float: left"><b>CPF *</b></label>
                     <input data-mask="999.999.999-99" class = "form-control" type="tel" name="cpf" id="cpf" value="<?php
-                           if (isset($cpf)) {
-                               echo $cpf;
-                           }
-                           ?>" placeholder="000.000.000-00" autofocus=""/>
+                    if (isset($cpf)) {
+                        echo $cpf;
+                    }
+                    ?>" placeholder="000.000.000-00" autofocus=""/>
                 </div>
                 <div class="col-9 form-group">
                     <label><b>Nome Completo *</b></label>
                     <input class = "form-control" type="text" name="nome" id="nome" value="<?php
-                           if (isset($nome)) {
-                               echo $nome;
-                           }
-                           ?>" placeholder="Nome"/>
+                    if (isset($nome)) {
+                        echo $nome;
+                    }
+                    ?>" placeholder="Nome"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3 form-group">
                     <label style="float: left"><b>Data de Nascimento *</b></label>
                     <input data-mask ="99/99/9999" class = "form-control" type="tel" name="dataNasc" id="data_nasc" value="<?php
-                           if (isset($dataNasc)) {
-                               echo $dataNasc;
-                           }
-                           ?>" placeholder="00/00/0000"/>
+                    if (isset($dataNasc)) {
+                        echo $dataNasc;
+                    }
+                    ?>" placeholder="00/00/0000"/>
                 </div>
                 <div class="col-3 form-group">
                     <label style="float: left"><b>Telefone *</b></label>
@@ -43,15 +43,15 @@
                 <div class="col-3 form-group">
                     <label style="display: block;"><b>Sexo *</b></label>
                     <input class="radio-inline" type="radio" name="sexo" value="M" <?php
-                           if ($sexo == "M") {
-                               echo "checked";
-                           }
+                    if ($sexo == "M") {
+                        echo "checked";
+                    }
                     ?>> Masculino
                     <input class="radio-inline" type="radio" name="sexo" value="F" <?php
-                        if ($sexo == "F") {
-                            echo "checked";
-                        }
-                        ?>> Feminino
+                    if ($sexo == "F") {
+                        echo "checked";
+                    }
+                    ?>> Feminino
                 </div>
                 <div class="col-3 form-group">
                     <label style="float: left">Estado Civil</label>
@@ -87,10 +87,10 @@
                         }
                         ?>>Separado(a)</option>
                         <option value="Companheiro(a)"<?php
-                    if ($estadoCivil == "Companheiro(a)") {
-                        echo " selected";
-                    }
-                    ?>>Companheiro(a)</option>
+                        if ($estadoCivil == "Companheiro(a)") {
+                            echo " selected";
+                        }
+                        ?>>Companheiro(a)</option>
                     </select>
                 </div>
             </div>
@@ -108,26 +108,26 @@
                 <div class="col-3 form-group">
                     <label style="float: left">CEP</label>
                     <input data-mask ="99999-999" class="form-control" type="text" name="cep" id="cep" value="<?php
-                           if (isset($cep)) {
-                               echo $cep;
-                           }
-                           ?>" placeholder="00000-000"/>
+                    if (isset($cep)) {
+                        echo $cep;
+                    }
+                    ?>" placeholder="00000-000"/>
                 </div>
                 <div class="col-3 form-group">
                     <label>Cidade</label>
                     <input class="form-control" type="text" name="cidade" id="cidade" value="<?php
-                           if (isset($cidade)) {
-                               echo $cidade;
-                           }
-                           ?>" placeholder="Cidade"/>
+                    if (isset($cidade)) {
+                        echo $cidade;
+                    }
+                    ?>" placeholder="Cidade"/>
                 </div>
                 <div class="col-3 form-group">
                     <label>Estado</label>
                     <input class="form-control" type="text" name="estado" id="estado" value="<?php
-                           if (isset($estado)) {
-                               echo $estado;
-                           }
-                           ?>" placeholder="Estado"/>
+                    if (isset($estado)) {
+                        echo $estado;
+                    }
+                    ?>" placeholder="Estado"/>
                 </div>
                 <div class="col-3 form-group">
                     <label style="float: left">Bairro</label>
@@ -142,26 +142,26 @@
                 <div class="col-6 form-group">
                     <label>Endereço (Rua, Avenida, Outros)</label>
                     <input class="form-control" type="text" name="endereco" id="endereco" value="<?php
-                           if (isset($endereco)) {
-                               echo $endereco;
-                           }
-                           ?>" placeholder="Endereço"/>
+                    if (isset($endereco)) {
+                        echo $endereco;
+                    }
+                    ?>" placeholder="Endereço"/>
                 </div>
                 <div class="col-3 form-group">
                     <label>Número</label>
                     <input class="form-control" type="tel" name="numero" id="numero" value="<?php
-                           if (isset($numero)) {
-                               echo $numero;
-                           }
-                           ?>" placeholder="Número"/>
+                    if (isset($numero)) {
+                        echo $numero;
+                    }
+                    ?>" placeholder="Número"/>
                 </div>
                 <div class="col-3 form-group">
                     <label>Complemento</label>
                     <input class="form-control" type="text" name="complemento" id="complemento" value="<?php
-                           if (isset($complemento)) {
-                               echo $complemento;
-                           }
-                           ?>" placeholder="Complemento"/>
+                    if (isset($complemento)) {
+                        echo $complemento;
+                    }
+                    ?>" placeholder="Complemento"/>
                 </div>
             </div>
             <br>

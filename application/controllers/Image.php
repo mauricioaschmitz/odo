@@ -23,7 +23,9 @@ public function __construct()
             $data['footerHide'] = 'false';
             //if want to hide menu, send menuHide = true
             $data['menuHide'] = 'false';
-
+            //if want to insert another file in the header
+            $data['headerOption'] =
+                "\t\t<script src=".base_url()."includes/js/Images.js></script>";
             $this->load->template('Image_view', $data);
 	}
 }

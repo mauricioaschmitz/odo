@@ -1,17 +1,16 @@
 <?php
 //universal
-$lang["odonto"] = "Odonto";
 $lang["home"] = "Início";
-$lang["user"] = "Usuário";
-$lang["password"] = "Senha";
 $lang["login"] = "Entrar";
+$lang["login_error"] = "Usuário ou senha incorreto!";
 $lang["logout"] = "Sair";
+$lang["odonto"] = "Odonto";
+$lang["password"] = "Senha";
 $lang["register"] = "Cadastro";
 $lang["submit"] = "Enviar";
-$lang["login_error"] = "Usuário ou senha incorreto!";
-
+$lang["user"] = "Usuário";
 
 //images
+$lang["browse"] = "Selecionar";
+$lang["choose_file"] = "Selecione o arquivo";
 $lang["image"] = "Imagem";
-
-?>
