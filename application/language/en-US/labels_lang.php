@@ -11,6 +11,5 @@ $lang["submit"] = "Submit";
 $lang["user"] = "User";
 
 //images
-$lang["browse"] = "Browse";
 $lang["choose_file"] = "Choose file";
 $lang["image"] = "Image";

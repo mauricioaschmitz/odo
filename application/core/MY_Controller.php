@@ -4,8 +4,8 @@ class MY_Controller extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-	      $idioma = $this->session->get_userdata('language');
-	      if (!(isset($idioma))){
+        $idioma = $this->session->get_userdata('language');
+        if (!(isset($idioma))) {
             $idioma = "pt-BR";
         }
         switch ($idioma) {
@@ -21,14 +21,14 @@ class MY_Controller extends CI_Controller {
                 break;
         }
         //se está na página de login
-        if (get_class($this) == 'Login'){
+        if (get_class($this) == 'Login') {
             //se estiver na página de login não faz nada
-        }
-		    else {
+        } else {
             //se não está logado redireciona para o login
-    			  if (!($this->session->userdata('logged_in'))){
-    				    redirect(base_url('index.php/login'));
+            if (!($this->session->userdata('logged_in'))) {
+                redirect(base_url('index.php/login'));
             }
-  		  }
+        }
     }
+
 }
