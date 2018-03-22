@@ -9,7 +9,7 @@
 
         <!-- Arquivos CSS -->
         <link rel="stylesheet" href="<?php echo base_url() ?>includes/bootstrap/css/bootstrap.css">
-        <?php if(isset($headerOption)){ echo $headerOption; }?>
+        <?php if(isset($headerOption)){ echo $headerOption;}?>
     </head>
     <body style="padding-bottom: 100px;">
         <?php include_once('menu.php'); ?>

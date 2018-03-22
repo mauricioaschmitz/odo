@@ -1,14 +1,32 @@
 <div class="container">
-    <div class="col-md-12 col-xs-12" style="margin-bottom: 100px;">
-        <form name="registros" method="post" enctype="multipart/form-data">
-            <div class="well well-sm">
-                <p><strong>Atenção! </strong>Preencha o Formulário abaixo para realizar o cadastro.
-                    A identificação do usuário é realizada através do número do CPF, atenção ao inserir. <p><strong>Os campos marcados com * são obrigatórios.</strong></p>
+    <?php
+    if (isset($teste)) {
+        echo $teste;
+    }
+    ?>
+    <div class="col-6" style="margin-bottom: 50px;">
+        <p><b>Informe o CPF para consulta:</b></p>
+        <form method="post" action="<?php echo base_url('index.php/register/checkCpf') ?>">
+            <div class="form-row" class="form-row" >
+                <div class="form-group col-6">
+                    <input data-inputmask="'mask': '999.999.999-99'" placeholder="000.000.000-00" type="tel" class="form-control" id="cpf" name="cpf">
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Consultar</button>
+                    </div>
+                </div>
             </div>
+        </form>
+    </div>
+</div>
+<div class="container" style="display: none;">
+    <div class="col-12" style="margin-bottom: 100px;">
+        <form name="consultaCpf" method="post" action="<?php echo base_url('index.php/register/insert') ?>">
             <div class ="row">
                 <div class="col-3 form-group">
                     <label style="float: left"><b>CPF *</b></label>
-                    <input data-mask="999.999.999-99" class = "form-control" type="tel" name="cpf" id="cpf" value="<?php
+                    <input data-inputmask="'mask': '999.999.999-99'" class = "form-control" type="tel" name="cpf" id="cpf" value="<?php
                     if (isset($cpf)) {
                         echo $cpf;
                     }
@@ -26,7 +44,7 @@
             <div class="row">
                 <div class="col-3 form-group">
                     <label style="float: left"><b>Data de Nascimento *</b></label>
-                    <input data-mask ="99/99/9999" class = "form-control" type="tel" name="dataNasc" id="data_nasc" value="<?php
+                    <input data-inputmask="'mask': '99/99/9999'" class = "form-control" type="date" name="dataNasc" id="dataNasc" value="<?php
                     if (isset($dataNasc)) {
                         echo $dataNasc;
                     }
@@ -34,7 +52,7 @@
                 </div>
                 <div class="col-3 form-group">
                     <label style="float: left"><b>Telefone *</b></label>
-                    <input data-mask ="(99)99999-9999" class="form-control" type="tel" name="telefone" id="fone" value="<?php
+                    <input data-inputmask="'mask': '59-99999-9999'" class="form-control" type="tel" name="telefone" id="telefone" value="<?php
                     if (isset($telefone)) {
                         echo $telefone;
                     }
@@ -97,7 +115,7 @@
             <div class ="row">
                 <div class="col-12 form-group">
                     <label>Email</label>
-                    <input class = "form-control" type="email" name="email" id="email" value="<?php
+                    <input data-inputmask="'alias': 'email'" class = "form-control" type="text" name="email" id="email" value="<?php
                     if (isset($email)) {
                         echo $email;
                     }
@@ -107,7 +125,7 @@
             <div class ="row">
                 <div class="col-3 form-group">
                     <label style="float: left">CEP</label>
-                    <input data-mask ="99999-999" class="form-control" type="text" name="cep" id="cep" value="<?php
+                    <input data-inputmask="'mask': '99999-999'" class="form-control" type="text" name="cep" id="cep" value="<?php
                     if (isset($cep)) {
                         echo $cep;
                     }
@@ -149,7 +167,7 @@
                 </div>
                 <div class="col-3 form-group">
                     <label>Número</label>
-                    <input class="form-control" type="tel" name="numero" id="numero" value="<?php
+                    <input data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false" class="form-control" type="tel" name="numero" id="numero" value="<?php
                     if (isset($numero)) {
                         echo $numero;
                     }
