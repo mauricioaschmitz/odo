@@ -22,7 +22,8 @@ class Register extends MY_Controller {
         //if want to insert another file in the header
         $this->data['headerOption'] = "<script src=" . "'" . base_url() . "includes/js/inputmask/dist/jquery.inputmask.bundle.js'></script>" . "\xA"
                 . "\t\t<script src=" . "'" . base_url() . "includes/js/inputmask/dist/inputmask/phone-codes/phone.js'></script>" . "\xA"
-                . "\t\t<script src=" . "'" . base_url() . "includes/js/inputmask/dist/inputmask/bindings/inputmask.binding.js'></script>" . "\xA";
+                . "\t\t<script src=" . "'" . base_url() . "includes/js/inputmask/dist/inputmask/bindings/inputmask.binding.js'></script>" . "\xA"
+                . "\t\t<script src=" . "'" . base_url() . "includes/js/register.js'></script>" . "\xA";
 
         $this->data['sexo'] = '';
         $this->data['estadoCivil'] = '';
@@ -57,15 +58,37 @@ class Register extends MY_Controller {
         $this->load->template('Register_view', $this->data);
         //redirect('index.php/register', 'refresh');
     }
-    
+
     public function checkCpf() {
         $cpf = $this->input->post('cpf');
-        if($this->Register_model->checkCpf($cpf)){
-            $this->data['teste'] = "achou";
+        $result = $this->Register_model->checkCpf($cpf);
+        if ($result) {
+            $this->session->set_userdata('id', $result->id);
+            echo json_encode(true);
         } else {
-            $this->data['teste'] = "não achou";
+            echo json_encode(false);
         }
-        $this->load->template('Register_view', $this->data);
+    }
+
+    public function uploadFile() {
+        $config['upload_path'] = './uploads/' . $this->session->userdata('id');
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 10000; // 10 MB
+        //$config['max_width'] = 1024;
+        //$config['max_height'] = 768;
+        $config['file_name'] = date("Y/m/d");
+
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('fileUpload')) {
+            $this->data['teste'] = $this->upload->display_errors();
+
+            $this->load->template('Register_view', $this->data);
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+
+            $this->load->view('upload_success', $data);
+        }
     }
 
 }

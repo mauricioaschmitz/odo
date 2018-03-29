@@ -11,7 +11,7 @@ class Image extends MY_Controller {
      */
     public function __construct() {
         parent::__construct();
-        //$this->load->model('Image_model');
+        $this->load->model('Image_model');
         //title for page
         $this->data['title'] = $this->lang->line('image');
         //if want to hide footer, send footerHide = true
@@ -19,7 +19,7 @@ class Image extends MY_Controller {
         //if want to hide menu, send menuHide = true
         $this->data['menuHide'] = 'false';
         //if want to insert another file in the header
-        $this->data['headerOption'] = "\t\t<script src=" . base_url() . "includes/js/Images.js></script>";
+        $this->data['headerOption'] = "<script src=" . base_url() . "includes/js/image.js></script>" . "\xA";
     }
 
     public function index() {        

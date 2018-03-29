@@ -9,7 +9,12 @@ $lang["password"] = "Password";
 $lang["register"] = "Register";
 $lang["submit"] = "Submit";
 $lang["user"] = "User";
+$lang["search"] = "Search";
+$lang["clean"] = "Clean";
+$lang["data"] = "Data";
 
 //images
 $lang["choose_file"] = "Choose file";
 $lang["image"] = "Image";
+$lang["images"] = "Images";
+$lang["insertImage"] = "Insert Image";

@@ -21,6 +21,9 @@ if (isset($menuHide) && $menuHide == "true") {
     <li class="nav-item">
       <a class="nav-link" href="<?php echo base_url('index.php/Image') ?>"><?php echo $this->lang->line('image'); ?></a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<?php echo base_url('index.php/Upload') ?>">Upload</a>
+    </li>
   <?php } ?>
   </ul>
 

@@ -14,12 +14,12 @@ class Register_model extends CI_Model {
     }
 
     function checkCpf($cpf) {
-        $this->db->select("cpf");
+        $this->db->select("cpf, id");
         $this->db->from("pessoas");
         $this->db->where("cpf", $cpf);
         $query = $this->db->get();
 
-        return $query->result();
+        return $query->row();
     }
 
 }
